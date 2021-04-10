@@ -25,3 +25,13 @@ h1{
 .rodape{
 	word-spacing: 3px;
 }
+.info-prod{
+	margin-right: 120px;
+	margin-left: 200px
+}
+.info-prod button{
+	width: 300px;
+}
+.info-prod input{
+	width: 300px;
+}
