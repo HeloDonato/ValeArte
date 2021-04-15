@@ -13,7 +13,7 @@
 	height: 300px;
 }
 h1{
-	margin-bottom: 40px;
+	margin-bottom: 30px;
 	margin-top: 20px;
 	font-family: 'Amatic SC', cursive;
 	font-size: 50px;
@@ -34,4 +34,27 @@ h1{
 }
 .info-prod input{
 	width: 300px;
+}
+.rodape2{
+	word-spacing: 3;
+	position: absolute;
+	bottom: 0;
+	color: white;
+	background-color: rgb(33, 37, 41);
+	height: 60px;
+	width: 100%;
+	text-align: center;
+}
+.abc{
+	padding-top: 5vh;
+}
+.pg-login{
+	background-image: url("Images/part1.png");
+	background-repeat: no-repeat;
+	background-position: bottom;
+	background-size: 100% 50%;
+	background-attachment: fixed;
+}
+.forms .btn{
+	float: right;
 }
