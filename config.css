@@ -18,6 +18,8 @@ h1{
 	font-family: 'Amatic SC', cursive;
 	font-size: 50px;
 	letter-spacing: 2px;
+	cursor: default;
+
 }
 .card p{
 	text-align: justify;
@@ -57,4 +59,28 @@ h1{
 }
 .forms .btn{
 	float: right;
+}
+.pagination li{ 
+	background-color: blueviolet;
+}
+.card:hover{
+	border: 1px solid black;
+	border-width: 2px;
+	transition: 0.05s;
+	box-shadow: 5px 1px 1px rgba(0, 0, 0, 0.2);;
+}
+
+.card a:hover{
+	transition: 0.2s;
+	color: black;
+	background-color: white;
+}
+input[type=checkbox]:focus{
+	background: #FFF;
+	box-shadow: none;
+	border-color: none;
+}
+input[type=checkbox]:checked{
+	background: rgb(36, 35, 35);
+	border-color: white;
 }
