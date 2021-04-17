@@ -60,12 +60,23 @@
       <div class="container">
         <div class="row">
           <div class="col align-self-start">
-            <div class="img-prod">
-              <img src="Images/Produtos/p1.png" class="img-thumbnail">
+            <div class="container">
+              <div class="row" style="height: 350px; align-items: center; justify-content: center;">
+                <div class="img-prod">
+                  <img src="Images/Produtos/p4.jpg" class="img-fluid" id="img">
+                </div>
+              </div>
+              <div class="row">
+                <input type=image src="Images/Produtos/p4.jpg" class='mini' onclick='changeImage("Images/Produtos/p4.jpg")'> 
+                <input type=image src="Images/Produtos/mini1.jpg" class='mini' onclick='changeImage("Images/Produtos/mini1.jpg")'> 
+                <input type=image src="Images/Produtos/mini2.jpg" class='mini' onclick='changeImage("Images/Produtos/mini2.jpg")'>               
+                <input type=image src="Images/Produtos/mini3.jpg" class='mini' onclick='changeImage("Images/Produtos/mini3.jpg")'> 
+                <input type=image src="Images/Produtos/mini4.jpg" class='mini' onclick='changeImage("Images/Produtos/mini4.jpg")'> 
+              </div>
             </div>
           </div>
           <div class="col align-self-start">
-            <div class="info-prod">
+            <div class="info-prod mt-5">
               <h2>Produto 1</h2>
               <p>Descrição do produto</p>
               <h3>R$100,00</h3>
@@ -160,3 +171,9 @@
 
   </body>
 </html>
+
+<script type="text/javascript">
+  function changeImage(a) {
+      document.getElementById("img").src=a;
+  }
+</script>

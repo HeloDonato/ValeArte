@@ -87,3 +87,16 @@ input[type=checkbox]:checked{
 .btn-close{
 	flex: right;
 }
+.mini{
+	width: 75px;
+	height: 75px;
+	border: 1px solid black;
+	margin-top: 5px;
+	padding: 2px;
+	margin-right: 5px;
+}
+.minia{
+	width: 30%;
+	height: 30%;
+	float: left;
+}
