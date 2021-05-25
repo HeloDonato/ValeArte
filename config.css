@@ -100,3 +100,8 @@ input[type=checkbox]:checked{
 	height: 30%;
 	float: left;
 }
+.btShow{
+	background-color: white;
+	text-decoration: underline;
+	border: 0;
+}
