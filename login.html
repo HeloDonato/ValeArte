@@ -49,14 +49,14 @@
     </header>
 
     <section>
-      <div class="nt-5">
-        <form style= "max-width:400px; margin:auto;">
+      <div id="conteudoPagina" class="nt-5">
+        <form @submit="checkForm" style= "max-width:400px; margin:auto;" method="POST" action="index.html">
     				<center><h1> Bem Vindo </h1></center>
-    				<label for= "email" class="form-label">E-mail</label>
-    				<input type="email" class="form-control" id="email" placeholder="E-mail" required autofocus>
+    				<label  for= "email" class="form-label">E-mail</label>
+    				<input v-model="email" type="email" class="form-control" id="email" placeholder="E-mail" required autofocus>
 			      <br>
 			      <label for="senha" class="form-label">Senha</label>
-			      <input type="password" class="form-control" id="senha" placeholder="Senha">
+			      <input v-model="senha" type="password" class="form-control" id="senha" placeholder="Senha">
     				<div class="container">
               <div class="row">
                 <div class="col-sm-6" style="padding-left: 0">
@@ -85,4 +85,45 @@
     </footer>
 
   </body>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<script> 
+  var conteudoPagina = new Vue({
+    el:"#conteudoPagina",
+    data: {     
+      email: "",
+      senha: "",
+      usuarios:[
+        {
+          email: "aaa@aaa.com", 
+          senha: "aaaaaaa"
+        },
+        {
+          email: "bbb@aaa.com", 
+          senha: "bbbbbb"
+        },
+        {
+          email: "ccc@aaa.com", 
+          senha: "bbbbbb"
+        }
+      ]
+     },
+
+    methods:{
+      checkForm: function(e){
+        try{
+            for(i=0; i<3; i++){
+              if(this.usuarios[i].email == this.email && this.usuarios[i].senha == this.senha ){
+                return true
+          }
+        }
+        }catch(e){
+         console.error(e);
+        }
+
+        e.preventDefault();
+      }
+    }
+  })
+</script>
 </html>

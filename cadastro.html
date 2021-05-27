@@ -57,34 +57,35 @@
     </header> 
 
     <section>
-      <div class="nt-5">
-        <form style= "max-width:40%; margin:auto;" class="forms">
+      <div id= "conteudoPagina" class="nt-5">
+        <form @submit="checkForm" style= "max-width:40%; margin:auto;" class="forms" action="index.html" method="POST">
             <center><h1> Cadastro </h1></center>
             <div class="container">
+              {{ nome }} {{sobrenome}} {{email}} {{senha}} {{csenha}}
               <div class="row">
                 <div class="col-sm-6">
                   <label for= "nome" class="form-label">Nome</label>
-                  <input type="text" class="form-control mb-2" id="nome" placeholder="Nome" required autofocus>
+                  <input v-model = "nome" type="text" class="form-control mb-2" id="nome" placeholder="Nome" required autofocus>
                 </div>
                 <div class="col-sm-6">
                   <label for= "sobrenome" class="form-label">Sobrenome</label>
-                  <input type="text" class="form-control mb-2" id="sobrenome" placeholder="Sobrenome" required autofocus>
+                  <input v-model= "sobrenome" type="text" class="form-control mb-2" id="sobrenome" placeholder="Sobrenome" required autofocus>
                 </div>
               </div>   
       				<label for= "email" class="form-label">E-mail</label>
-      				<input type="email" class="form-control mb-2" id="email" placeholder="E-mail" required autofocus>
+      				<input v-model= "email" type="email" class="form-control mb-2" id="email" placeholder="E-mail" required autofocus>
               <div class="row">
                 <div class="col-sm-6">
                   <label for="senha" class="form-label">Senha</label>
-                  <input type="password" class="form-control mb-2" id="senha" placeholder="Senha">
+                  <input v-model="senha" type="password" class="form-control mb-2" id="senha" placeholder="Senha">
                 </div>
                 <div class="col-sm-6">
                   <label for="confirmacao" class="form-label">Confirme sua senha</label>
-                  <input type="password" class="form-control mb-2" id="confirmacao" placeholder="Digite a senha novamente">
+                  <input v-model="csenha" type="password" class="form-control mb-2" id="confirmacao" placeholder="Digite a senha novamente">
                 </div>
               </div> 
                 <button type="submit" class="btn btn-dark btn-block mt-2">Cadastrar</button>
-                <a class="btn btn-link mt-3" href="login.html" role="button">Já tenho conta</a>
+                <a class="btn btn-link mt-3"  href="login.html" role="button">Já tenho conta</a>
             </div>
         </form>
     </div>  
@@ -98,6 +99,41 @@
 
   </body>
 </html>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<script> 
+  var conteudoPagina = new Vue({
+    el:"#conteudoPagina",
+    data: {     
+      nome: "",
+      sobrenome: "",
+      email: "",
+      senha: "",
+      csenha: "",
+      indx: "index.html",
+     },
+    methods:{
+      checkForm: function (e){
+        if(this.nome && this.sobrenome && this.email){
+
+          if(this.senha != "" || this.csenha != ""){
+
+            if(this.senha != this.csenha){
+                alert('Senhas não batem!!!');
+            }
+            if (this.senha == this.csenha){
+              return true;
+              window.location.href="login.html";
+            }
+          }
+        }
+        
+        e.preventDefault();
+      },
+    }
+  })
+</script>
 
 <script type="text/javascript">
   function changeImage(a) {
