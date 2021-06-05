@@ -50,7 +50,7 @@
 
     <section>
       <div id="conteudoPagina" class="nt-5">
-        <form @submit="checkForm" style= "max-width:400px; margin:auto;" method="POST" action="index.html">
+        <form @submit="checkForm" style= "max-width:400px; margin:auto;" method="POST" action="index.html"  >
     				<center><h1> Bem Vindo </h1></center>
     				<label  for= "email" class="form-label">E-mail</label>
     				<input v-model="email" type="email" class="form-control" id="email" placeholder="E-mail" required autofocus>
@@ -93,6 +93,7 @@
     data: {     
       email: "",
       senha: "",
+      vf:false,
       usuarios:[
         {
           email: "aaa@aaa.com", 
@@ -115,12 +116,15 @@
             for(i=0; i<3; i++){
               if(this.usuarios[i].email == this.email && this.usuarios[i].senha == this.senha ){
                 return true
-          }
+          }else{
+          vf = true;}
         }
         }catch(e){
          console.error(e);
         }
-
+        if(vf)
+          alert ('Login não efeituado')
+          
         e.preventDefault();
       }
     }
