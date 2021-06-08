@@ -58,14 +58,6 @@
 
     <section>
       <div id= "conteudoPagina" class="nt-5">
-        <div class="erros"  >
-          <p v-if="errors.length">
-            <b>Por favor, corrija o(s) seguinte(s) erro(s):</b>
-            <ul>
-              <li v-for="error in errors"> {{ error }} </li>
-            </ul>
-          </p>
-        </div>
         <form @submit="checkForm" style= "max-width:40%; margin:auto;" class="forms" action="index.html" novalidate="true" method="POST">
             <center><h1> Cadastro </h1></center>
             <div class="container">
@@ -122,35 +114,35 @@
       vf: false,
       indx: "index.html",
      },
-     
     methods:{
       checkForm: function (e) {
       this.errors = [];
 
       if (!this.nome) {
-        this.errors.push("Nome é obrigatório. ");
+        this.errors += 1;
       }
       if (!this.sobrenome) {
-        this.errors.push(' Sobrenome é obrigatório.');
+        this.errors += 1;
       }
-
       if (!this.email) {
-        this.errors.push('E-mail é obrigatório. ');
+        this.errors += 1;
       } else if (!this.validEmail(this.email)) {
-        this.errors.push('Utilize um e-mail válido. ');
+        this.errors += 1;
       }
       if (!this.senha) {
-        this.errors.push('A senha é obrigatória. ');
+        this.errors += 1;
       }
       if (!this.csenha) {
-        this.errors.push('Digite a senha novamente. ');
+        this.errors += 1;
       }
       if (this.senha != this.csenha){
-        this.errors.push('Senhas não conferem. ');
+        this.errors += 1;
       }
 
       if (!this.errors.length) {
         return true;
+      }else{
+        alert("Preencha os dados corretamente!")
       }
 
       e.preventDefault();
